@@ -15,5 +15,6 @@ services:
 
 networks:
   mmvib-net:
-    driver: bridge
-    name: mmvib-net
+    external:
+      name: mmvib-net
+      
