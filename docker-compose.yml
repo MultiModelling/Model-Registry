@@ -3,7 +3,6 @@ version: "3.2"
 services:
   mmvib-registry:
     build: .
-    image: ci.tno.nl/multimodelling/mmvib-registry:dev
     volumes:
       - .:/code
     command: ["gunicorn", "--reload", "tno.mmvib_registry.main:app", "-t 300", "-w 1", "-b :9200"]
@@ -11,3 +10,8 @@ services:
       - "9200:9200"
     env_file:
       - ".env.docker"
+
+networks:
+  mmvib-net:
+    driver: bridge
+    name: mmvib-net
