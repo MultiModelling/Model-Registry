@@ -10,6 +10,8 @@ services:
       - "9200:9200"
     env_file:
       - ".env.docker"
+    networks:
+      - mmvib-net
 
 networks:
   mmvib-net:
