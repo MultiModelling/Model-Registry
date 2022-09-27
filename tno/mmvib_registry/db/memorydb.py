@@ -12,10 +12,6 @@ class MemoryDB:
     def __init__(self):
         print("init db")
         self._models: List[ModelAdapter] = []
-        dummy = ModelAdapter(name="ESSIM", version="1.0", last_seen=datetime.now(), max_workers=1, used_workers=1,
-                             status=ModelAdapterState.BUSY, uri="https://essim.hesi.energy/api",
-                             owner="Edwin", id="uniqueid")
-        self._models.append(dummy)
 
     def get_all(self) -> List[ModelAdapter]:
 
